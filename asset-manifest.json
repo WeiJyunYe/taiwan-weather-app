@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/taiwan-weather-app/static/css/main.6052a8e4.css",
+    "main.js": "/taiwan-weather-app/static/js/main.5a7ee210.js",
+    "static/js/787.c210b8ef.chunk.js": "/taiwan-weather-app/static/js/787.c210b8ef.chunk.js",
+    "static/media/clear-day.png": "/taiwan-weather-app/static/media/clear-day.b7a2032061738637e222.png",
+    "static/media/snow.png": "/taiwan-weather-app/static/media/snow.6bd6f53987c63f95a589.png",
+    "static/media/partly-cloudy.png": "/taiwan-weather-app/static/media/partly-cloudy.70da008fd7acd5060ee9.png",
+    "static/media/clear-night.png": "/taiwan-weather-app/static/media/clear-night.694f65f25fe58e2d49bd.png",
+    "static/media/partly-clear-day.png": "/taiwan-weather-app/static/media/partly-clear-day.570198a5c7e90db25a16.png",
+    "static/media/mostly-clear-night.png": "/taiwan-weather-app/static/media/mostly-clear-night.6e72c114ddb4c1e9554e.png",
+    "static/media/thunderstorms.png": "/taiwan-weather-app/static/media/thunderstorms.1bb1eec6ba950b89914a.png",
+    "static/media/rainy.png": "/taiwan-weather-app/static/media/rainy.ff797a6136dace1fc454.png",
+    "static/media/partly-clear-night.png": "/taiwan-weather-app/static/media/partly-clear-night.e7180a1b232b4dea0840.png",
+    "static/media/fog.png": "/taiwan-weather-app/static/media/fog.785920d1e43671c31351.png",
+    "static/media/mostly-clear-day.png": "/taiwan-weather-app/static/media/mostly-clear-day.33cf2f476f5ca5b9bb69.png",
+    "static/media/cloudy.png": "/taiwan-weather-app/static/media/cloudy.06ecf044eca403bc4369.png",
+    "index.html": "/taiwan-weather-app/index.html",
+    "main.6052a8e4.css.map": "/taiwan-weather-app/static/css/main.6052a8e4.css.map",
+    "main.5a7ee210.js.map": "/taiwan-weather-app/static/js/main.5a7ee210.js.map",
+    "787.c210b8ef.chunk.js.map": "/taiwan-weather-app/static/js/787.c210b8ef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6052a8e4.css",
+    "static/js/main.5a7ee210.js"
+  ]
+}
