@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/taiwan-weather-app/static/css/main.d6f3026c.css",
-    "main.js": "/taiwan-weather-app/static/js/main.10220241.js",
+    "main.js": "/taiwan-weather-app/static/js/main.525871d0.js",
     "static/media/clear-day.png": "/taiwan-weather-app/static/media/clear-day.b7a2032061738637e222.png",
     "static/media/snow.png": "/taiwan-weather-app/static/media/snow.6bd6f53987c63f95a589.png",
     "static/media/partly-cloudy.png": "/taiwan-weather-app/static/media/partly-cloudy.70da008fd7acd5060ee9.png",
@@ -16,10 +16,10 @@
     "static/media/cloudy.png": "/taiwan-weather-app/static/media/cloudy.06ecf044eca403bc4369.png",
     "index.html": "/taiwan-weather-app/index.html",
     "main.d6f3026c.css.map": "/taiwan-weather-app/static/css/main.d6f3026c.css.map",
-    "main.10220241.js.map": "/taiwan-weather-app/static/js/main.10220241.js.map"
+    "main.525871d0.js.map": "/taiwan-weather-app/static/js/main.525871d0.js.map"
   },
   "entrypoints": [
     "static/css/main.d6f3026c.css",
-    "static/js/main.10220241.js"
+    "static/js/main.525871d0.js"
   ]
 }
