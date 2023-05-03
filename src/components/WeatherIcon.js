@@ -58,7 +58,7 @@ const weatherIconsList = {
 const weatherCodeToTypeConverter = (weatherCode) => {
   const [weatherType] =
     Object.entries(weatherTypesList).find(([weatherType, weatherCodes]) =>
-      weatherCodes.includes(Number(weatherCode))) || []
+      weatherCodes.includes(Number(weatherCode))) ?? []
   return weatherType
 }
 

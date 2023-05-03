@@ -31,7 +31,7 @@ const fetchCurrentWeather = (locationName) => {
       })
     })
     .catch((error) => {
-      console.log(error)
+      //console.log(error)
       alert("系統發生錯誤，請您重新整理。若仍跳出此訊息，很抱歉，因無法取得您所在縣市氣象資料，暫時無法提供服務。")
     })
 }
@@ -59,6 +59,7 @@ const fetchWeatherForecast = (cityName) => {
         },
         {}
       )
+      //console.log(weatherElements)
 
       return ({
         locationName: locationData.locationName,
@@ -91,6 +92,7 @@ export default function useWeatherApi(currentLocation) {
         fetchCurrentWeather(locationName),
         fetchWeatherForecast(cityName),
       ])
+      //console.log(currentWeatherData, weatherForecastData)
       setCurrentWeather({
         ...currentWeatherData,
         ...weatherForecastData,

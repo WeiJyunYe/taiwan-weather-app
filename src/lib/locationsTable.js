@@ -5,7 +5,7 @@ export const locationsTable = [
   },
   {
     cityName: "新北市",
-    locationName: "板橋",
+    locationName: "國一S026K",
   },
   {
     cityName: "桃園市",
