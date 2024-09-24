@@ -1,54 +1,52 @@
 import { useState, useEffect, useCallback } from "react"
 
+
 const fetchCurrentWeather = (locationName) => {
   return fetch(
-    `https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=${process.env.REACT_APP_API_KEY}&locationName=${locationName}`
+    `https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=${process.env.REACT_APP_API_KEY}&format=JSON`
   )
     .then((response) => {
       if (!response.ok) {
         throw new Error(response.statusText)
       }
+
       return response.json()
     })
     .then((data) => {
-      //console.log(data)
-      const locationData = data.records.location[0]
-      const neededData = ["WDSD", "TEMP", "HUMD"]
-      const weatherElements = locationData.weatherElement.reduce(
-        (neededElements, currentElement) => {
-          if (neededData.includes(currentElement.elementName)) {
-            neededElements[currentElement.elementName] = currentElement.elementValue
-          }
-          return neededElements
-        },
-        {}
-      )
-
+      const locationData = data.records.Station.find(location => location.StationName === locationName)
+      const neededData = ["WindSpeed", "AirTemperature", "RelativeHumidity"]
+      const weatherElements = {}
+      Object.keys(locationData.WeatherElement).forEach(elementKey => {
+        const currentElement = locationData.WeatherElement[elementKey];
+        if (neededData.includes(elementKey)) {
+          weatherElements[elementKey] = currentElement;
+        }
+      })
       return ({
-        temperature: weatherElements.TEMP,
-        windSpeed: weatherElements.WDSD,
-        humid: weatherElements.HUMD,
+        temperature: weatherElements.AirTemperature,
+        windSpeed: weatherElements.WindSpeed,
+        humid: weatherElements.RelativeHumidity,
       })
     })
     .catch((error) => {
-      //console.log(error)
+      console.log(error)
       alert("系統發生錯誤，請您重新整理。若仍跳出此訊息，很抱歉，因無法取得您所在縣市氣象資料，暫時無法提供服務。")
     })
 }
 
 const fetchWeatherForecast = (cityName) => {
   return fetch(
-    `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${process.env.REACT_APP_API_KEY}&locationName=${cityName}`
+    `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${process.env.REACT_APP_API_KEY}&format=JSON`
   )
     .then((response) => {
       if (!response.ok) {
         throw new Error(response.statusText)
       }
+
       return response.json()
     })
     .then((data) => {
-      //console.log(data)
-      const locationData = data.records.location[0]
+      const locationData = data.records.location.find(location => location.locationName === cityName)
       const neededData = ["Wx", "PoP"]
       const weatherElements = locationData.weatherElement.reduce(
         (neededElements, currentElement) => {
@@ -59,7 +57,6 @@ const fetchWeatherForecast = (cityName) => {
         },
         {}
       )
-      //console.log(weatherElements)
 
       return ({
         locationName: locationData.locationName,
@@ -92,7 +89,6 @@ export default function useWeatherApi(currentLocation) {
         fetchCurrentWeather(locationName),
         fetchWeatherForecast(cityName),
       ])
-      //console.log(currentWeatherData, weatherForecastData)
       setCurrentWeather({
         ...currentWeatherData,
         ...weatherForecastData,

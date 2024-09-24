@@ -134,7 +134,7 @@ export default function WeatherCard(props) {
                 src={relativeHumidity}
                 sx={{ height: 48, width: 48 }}
               />
-              <Typography>{Math.round(currentWeather.humid * 100)} %RH</Typography>
+              <Typography>{Math.round(currentWeather.humid)} %RH</Typography>
             </Stack>
           </Stack>
           <Link
